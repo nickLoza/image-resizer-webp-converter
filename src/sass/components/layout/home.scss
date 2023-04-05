@@ -1,0 +1,40 @@
+@use "../vars/vars" as *;
+
+@mixin fontStyle($f,$w){
+	font:{
+			size: $f;
+			weight: $w;
+		}
+}
+
+.home{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: .5rem;
+	color: $text-color-inverse;
+	&__h1{
+		@include fontStyle(4.7rem, 700);
+	}
+	&__h2{
+		@include fontStyle(2.3rem, 700);
+	}
+	&__p{
+		@include fontStyle(1.4rem, 400);
+		max-width: 400px;
+		margin-top: .6rem;
+	}
+	&__btn{
+		margin-top: 2rem;
+		font-size: 2rem;
+		display: inline;
+		padding: .7rem 1.2rem;
+		background-color: $secondary-color;
+		color: $text-color;
+		transition: filter .1s ease-in;
+		&:hover{
+			filter: brightness(180%);
+		}
+	}
+}

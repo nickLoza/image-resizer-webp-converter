@@ -1,0 +1,28 @@
+@use "../vars/vars" as *;
+
+.footer{
+	width: 100%;
+	padding: 3rem;
+	padding-bottom: 5rem;
+	background-color: #ccc; 
+	&__content{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1rem;
+		max-width: 1200px;
+		margin: auto;
+		.column{
+			&__title{
+				font:{
+					size: 1.2rem;
+				}
+				margin-bottom: .4rem;
+				color: $secondary-color;
+			}
+			&__text{
+				font-size: 1rem;
+				margin-bottom: .4rem;
+			}
+		}
+	}
+}

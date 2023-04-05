@@ -1,0 +1,89 @@
+@use "../vars/vars" as *;
+
+.lab{
+	&__btn{
+		font:{
+			size: 1.5rem;
+		}
+		letter-spacing: 0.0875rem;
+		padding: .4rem .9rem;
+		background-color: $secondary-color;
+		border-radius: 17px;
+		color: $text-color;
+		margin-top: 1rem;
+		cursor: pointer;
+		transition: filter .2s ease-in;
+		&:hover{
+			filter: brightness(170%);
+		}
+	}
+	&__h2{
+		text-align: center;
+		font:{
+			size: 4.7rem;
+			weight: 700;
+		}
+		@media screen and (max-width: 680px) {
+			font-size: 3rem;
+		}
+	}
+	&__img{
+		max-height: 50%;
+		object-fit: contain;
+		padding: 0 1rem;
+	}
+	&__content{
+		padding: 1rem 0;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 80%;
+		height: 75%;
+		background-color: #fff;
+		border-radius: 17px;
+		outline: 2px solid $secondary-color;
+		margin: auto;
+		font-size: 1.2rem;
+		&-dropzone{
+			color: $secondary-color;
+			svg{
+				font-size: 5rem;
+				cursor: pointer;
+				transition: filter .2s ease-in;
+				&:hover{
+					filter: brightness(180%);
+				}
+			}
+		}
+		.edit{
+			display: flex;
+			align-items: center;
+			column-gap: 3rem;
+			font-size: 1.7rem;
+			margin: 1.5rem 0;
+			&__field{
+				width: 5rem;
+			}
+			&__span{
+				margin-right: .5rem;
+			}
+			&__input{
+				width: 5rem;
+				text-align: center;
+				border-bottom: 2px solid $secondary-color;
+			}
+			&__btn{
+				color: $text-color;
+				padding: .4rem .9rem;
+				background-color: $secondary-color;
+				cursor: pointer;
+				transition: filter .2s ease-in;
+				&:hover{
+					filter: brightness(180%);
+				}
+			}
+		}
+		
+	}
+}
