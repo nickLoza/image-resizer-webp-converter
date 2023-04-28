@@ -1,8 +1,8 @@
 import { useReducer, useRef } from "react";
 import resizeFile from "./utils/resizeFile";
 import { RiImageAddLine } from "react-icons/ri";
-import resizeReducer from "../reducers/ResizeReducer";
-import { initialState } from "../reducers/ResizeReducer";
+import resizeReducer from "../reducers/resizeReducer";
+import { initialState } from "../reducers/resizeReducer";
 
 
 function ResizePage() {
