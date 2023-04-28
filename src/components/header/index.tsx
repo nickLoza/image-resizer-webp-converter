@@ -20,11 +20,6 @@ function Header() {
 							Home
 						</NavLink>
 					</li>
-					<li className="menu__li">
-						<NavLink className="menu__link" to={"lab"}>
-							Image lab
-						</NavLink>
-					</li>
 				</ul>
 			</nav>
 		</header>

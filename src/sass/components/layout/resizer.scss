@@ -1,6 +1,6 @@
 @use "../vars/vars" as *;
 
-.lab{
+.resizer{
 	&__btn{
 		font:{
 			size: 1.5rem;
@@ -20,7 +20,7 @@
 	&__h2{
 		text-align: center;
 		font:{
-			size: 4.7rem;
+			size: 4.3rem;
 			weight: 700;
 		}
 		@media screen and (max-width: 680px) {

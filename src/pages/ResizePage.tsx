@@ -1,61 +1,13 @@
 import { useReducer, useRef } from "react";
 import resizeFile from "./utils/resizeFile";
 import { RiImageAddLine } from "react-icons/ri";
+import resizeReducer from "../reducers/ResizeReducer";
+import { initialState } from "../reducers/ResizeReducer";
 
 
-const fileTypes = ["JPG", "PNG", "JPEG"];
+function ResizePage() {
 
-const initialState:InitialStateTypes = {
-	userImg:  null,
-	prevImg:  "",
-	imgName:  "",
-	imgH: 	  0,
-	imgW: 	  0,
-	imgRatio: 0,
-}
-
-
-interface InitialStateTypes{
-	userImg: Blob|null,
-	prevImg: string,
-	imgName: string,
-	imgH: number,
-	imgW: number,
-	imgRatio: number,
-}
-
-type ImgActionTypes = 
-	{type: "upload" | "resize", 
-	payload: InitialStateTypes};
-
-function imgReducer(state: InitialStateTypes,action: ImgActionTypes): InitialStateTypes{
-	switch(action.type){
-		case "upload":{
-			return{
-				...state,
-				userImg: action.payload.userImg,
-				prevImg: action.payload.prevImg,
-				imgName: action.payload.imgName,
-				imgH: 	 action.payload.imgH,
-				imgW: 	 action.payload.imgW,
-				imgRatio:action.payload.imgRatio
-			}
-		}
-		case "resize":{
-			return{
-				...state,
-				imgH: action.payload.imgH,
-				imgW: action.payload.imgW
-			}
-		}
-		default:
-			return state;
-	}
-}
-
-function Lab() {
-
-	const [state, dispatch] = useReducer(imgReducer, initialState);
+	const [state, dispatch] = useReducer(resizeReducer, initialState);
 	const { userImg, prevImg, imgName, imgH, imgW, imgRatio} = state;
 
 	const inputFileRef = useRef<HTMLInputElement>(null!);
@@ -129,15 +81,15 @@ function Lab() {
 }
 
 	return (
-		<div className='lab'>
-			<h2 className="lab__h2">IMAGE LAB</h2>
-			<div className="lab__content"  
+		<div className='resizer'>
+			<h2 className="resizer__h2">RESIZER</h2>
+			<div className="resizer__content"  
 				onDragOver={preventDefault}
                 onDragEnter={preventDefault}
                 onDragLeave={preventDefault}
 				onDrop={handleOnDrop}>
 				<div 
-				className="lab__content-dropzone">
+				className="resizer__content-dropzone">
 				<input 
 					ref={inputFileRef}
 					type="file" 
@@ -152,7 +104,7 @@ function Lab() {
 				</div>
 				{prevImg != ""?
 				<>
-				<div className="lab__content-edit edit">
+				<div className="resizer__content-edit edit">
 						<div className="edit__field">
 							<span className="edit__span">Width:</span>
 							<input 
@@ -177,12 +129,12 @@ function Lab() {
 						</div>
 					</div>
 				<img 
-					className="lab__img" 
+					className="resizer__img" 
 					src={prevImg} 
 					alt="your image" 
 					style={{minWidth: "40px", width: "400px"}}/>	
 				<button 
-					className="lab__btn"
+					className="resizer__btn"
 					onClick={downloadImage}>
 					DOWNLOAD
 				</button>
@@ -194,4 +146,4 @@ function Lab() {
 	)
 }
 
-export default Lab
+export default ResizePage
