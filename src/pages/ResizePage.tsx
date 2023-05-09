@@ -136,7 +136,7 @@ function ResizePage() {
 				<button 
 					className="resizer__btn"
 					onClick={downloadImage}>
-					DOWNLOAD
+					DOWNLOAD WEBP
 				</button>
 				</>
 				:
