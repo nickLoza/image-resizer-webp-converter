@@ -1,4 +1,5 @@
 import footerText from "./utils/footerText"
+import {AiOutlineGithub, AiOutlineLinkedin} from "react-icons/ai"
 
 function Footer() {
 	return (
@@ -16,6 +17,18 @@ function Footer() {
 						))}
 					</div>
 				))}
+				<div className="footer__info">
+					<a  className="footer__info-link"
+						href="https://github.com/nickLoza/image-resizer-webp-converter"
+						target="_blank">
+						 <AiOutlineGithub/>Repository
+					</a>
+					<a  className="footer__info-link"
+						href="https://www.linkedin.com/in/nicklozadev/"
+						target="_blank">
+						<AiOutlineLinkedin/>Linkedin 
+					</a>
+				</div>
 			</div>
 		</footer>
 	)

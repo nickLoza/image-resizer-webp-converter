@@ -29,4 +29,20 @@
 			}
 		}
 	}
+	&__info{
+		&-link{
+			display: flex;
+			align-items: center;
+			margin-bottom: .5rem;
+			font-size: 1.2rem;
+			transition: color .3s ease-in;
+			svg{
+				font-size: 2rem;
+				width: 3rem;
+			}
+			&:hover{
+				color: #0CB1EA;
+			}
+		}
+	}
 }
